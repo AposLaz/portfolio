@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 690" role="img" aria-labelledby="title desc">
+  <title id="title">How slow synchronous processing can lead to lag</title>
+  <desc id="desc">A schematic for the classic consumer group protocol with eager assignment. Slow listener processing can exceed the allowed interval between polls. Group membership can then change, triggering an eager rebalance that pauses processing and may increase lag. Membership changes can also cause commits to fail and allow records to be delivered again. A disconnect alone does not prove this sequence. Static membership can delay reassignment until the session timeout.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="688" rx="20" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <g font-family="Inter, Arial, sans-serif" fill="#0f172a">
+    <text x="40" y="52" font-size="29" font-weight="700">When slow processing becomes a group problem</text>
+    <text x="40" y="86" font-size="20" fill="#475569">One possible sequence · synchronous processing · classic / eager</text>
+
+    <g fill="#eff6ff" stroke="#93c5fd" stroke-width="2">
+      <rect x="48" y="118" width="500" height="68" rx="12"/>
+      <rect x="48" y="205" width="500" height="68" rx="12"/>
+      <rect x="48" y="292" width="500" height="68" rx="12"/>
+      <rect x="48" y="379" width="500" height="68" rx="12"/>
+      <rect x="48" y="466" width="500" height="68" rx="12" fill="#ecfeff" stroke="#67e8f9"/>
+    </g>
+    <g font-size="23" font-weight="600" text-anchor="middle">
+      <text x="298" y="160">Slow listener processing</text>
+      <text x="298" y="247">Poll interval exceeded</text>
+      <text x="298" y="334">Group membership changes</text>
+      <text x="298" y="421">Eager rebalance pauses processing</text>
+      <text x="298" y="508">Lag can grow</text>
+    </g>
+    <g stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#arrow)">
+      <path d="M 298 186 V 201"/>
+      <path d="M 298 273 V 288"/>
+      <path d="M 298 360 V 375"/>
+      <path d="M 298 447 V 462"/>
+      <path d="M 548 326 H 594"/>
+    </g>
+    <rect x="602" y="276" width="310" height="148" rx="12" fill="#ffffff" stroke="#06b6d4" stroke-width="2"/>
+    <g text-anchor="middle">
+      <text x="757" y="312" font-size="21" font-weight="600">Commits may fail</text>
+      <text x="757" y="346" font-size="21" font-weight="600">Records may be</text>
+      <text x="757" y="373" font-size="21" font-weight="600">delivered again</text>
+      <text x="757" y="405" font-size="17" fill="#475569">If offsets were not committed</text>
+    </g>
+    <line x1="40" y1="562" x2="920" y2="562" stroke="#cbd5e1"/>
+    <g font-size="19" fill="#475569">
+      <text x="40" y="594">A disconnect alone does not establish this cause.</text>
+      <text x="40" y="625">Correlate polling, membership changes, rebalance pauses, and lag.</text>
+      <text x="40" y="656">Static membership can delay reassignment until the session timeout.</text>
+    </g>
+  </g>
+</svg>

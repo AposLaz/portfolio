@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
+  { href: "/notes/", label: "Blog" },
   { href: "#publications", label: "Publications" },
   { href: "#education", label: "Education" },
   { href: "#certifications", label: "Certifications" },
@@ -100,7 +101,7 @@ export default function Navbar() {
               AL
             </motion.a>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-5">
               {navLinks.map((link) => (
                 <motion.a
                   key={link.href}
@@ -130,7 +131,7 @@ export default function Navbar() {
               </motion.button>
             </div>
 
-            <div className="md:hidden flex items-center gap-4">
+            <div className="lg:hidden flex items-center gap-4">
               <motion.button
                 onClick={toggleTheme}
                 className="p-2 rounded-full bg-[var(--card-bg)]"
@@ -163,7 +164,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 md:hidden bg-[var(--background)]/95 backdrop-blur-lg pt-20"
+            className="fixed inset-0 z-40 lg:hidden bg-[var(--background)]/95 backdrop-blur-lg pt-20 overflow-y-auto"
           >
             <div className="flex flex-col items-center gap-6 p-8">
               {navLinks.map((link, index) => (

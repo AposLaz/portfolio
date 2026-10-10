@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 490" role="img" aria-labelledby="title desc">
+  <title id="title">Fewer rebalances can still cause longer individual interruptions</title>
+  <desc id="desc">Two schematic processing timelines. The first has frequent short rebalance pauses, and the second has fewer but longer individual pauses. Blue segments represent processing and cyan diagonally striped segments represent rebalance pauses. The second timeline has longer individual interruptions but slightly less total paused time. Frequency, individual duration, and total paused share are separate signals. There is no numerical scale, and the illustration is not a measurement.</desc>
+  <defs>
+    <pattern id="pause" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#a5f3fc"/>
+      <path d="M -2 2 L 2 -2 M 0 10 L 10 0 M 8 12 L 12 8" stroke="#0891b2" stroke-width="2"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="488" rx="20" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <g font-family="Inter, Arial, sans-serif" fill="#0f172a">
+    <text x="40" y="52" font-size="29" font-weight="700">Fewer events can still cause longer interruptions</text>
+    <text x="40" y="86" font-size="20" fill="#475569">Schematic processing timelines · no numerical scale</text>
+
+    <g font-size="19">
+      <rect x="40" y="109" width="25" height="23" rx="3" fill="#2563eb"/>
+      <text x="78" y="128">Processing</text>
+      <rect x="235" y="109" width="25" height="23" rx="3" fill="url(#pause)" stroke="#0891b2"/>
+      <text x="273" y="128">Rebalance pause</text>
+    </g>
+
+    <text x="40" y="174" font-size="23" font-weight="600">Frequent short pauses</text>
+    <rect x="40" y="192" width="880" height="48" rx="6" fill="#2563eb"/>
+    <g fill="url(#pause)" stroke="#0891b2" stroke-width="1">
+      <rect x="166" y="192" width="25" height="48"/>
+      <rect x="303" y="192" width="25" height="48"/>
+      <rect x="460" y="192" width="25" height="48"/>
+      <rect x="605" y="192" width="25" height="48"/>
+      <rect x="771" y="192" width="25" height="48"/>
+    </g>
+
+    <text x="40" y="286" font-size="23" font-weight="600">Fewer, longer pauses</text>
+    <rect x="40" y="304" width="880" height="48" rx="6" fill="#2563eb"/>
+    <g fill="url(#pause)" stroke="#0891b2" stroke-width="1">
+      <rect x="210" y="304" width="55" height="48"/>
+      <rect x="610" y="304" width="55" height="48"/>
+    </g>
+    <path d="M 40 377 H 918" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="480" y="406" text-anchor="middle" font-size="18" fill="#475569">Time →</text>
+    <text x="40" y="449" font-size="20" fill="#475569">Track rebalance frequency, pause duration, and total paused share separately.</text>
+  </g>
+</svg>

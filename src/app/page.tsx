@@ -11,6 +11,7 @@ import Education from "@/components/Education";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import TechnicalNotes from "@/components/TechnicalNotes";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Experience />
       <Skills />
       <Projects />
+      <TechnicalNotes />
       <Publications />
       <Education />
       <Certifications />

@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Blog
+
+The portfolio includes a searchable blog at `/notes/`, organized by topic and category. Posts share stories, guides, and practical lessons from building and understanding systems. Topics can include Kafka, Homelab, and Networking; original evidence stays in local private notes.
+
+```bash
+npm run notes -- new "Issue title" --topic "Kafka" --category "Troubleshooting" --tags "Consumer groups,Offsets"
+npm run notes -- find "error message"
+```
+
+See [the notes workflow](docs/technical-notes.md) and [the entry template](docs/note-template.md). Private drafts in `.notes/` are ignored by Git and need a separate backup.
+
 ## Getting Started
 
 First, run the development server:
@@ -15,6 +26,15 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+To preview the production static export, build it and serve the output:
+
+```bash
+npm run build
+npm start
+```
+
+`npm start` serves `out/` at [http://localhost:3000](http://localhost:3000). Run a new build after editing content; use `npm run dev` for automatic updates while editing.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
